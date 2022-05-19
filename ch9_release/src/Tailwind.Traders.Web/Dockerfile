@@ -8,7 +8,7 @@ WORKDIR /ClientApp
 COPY ClientApp/package.json .
 COPY ClientApp/package-lock.json .
 #RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
-RUN npm install
+RUN npm install --package-lock-only
 COPY ClientApp/ .
 RUN npm run build
 
